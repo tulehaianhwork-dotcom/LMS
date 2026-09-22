@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa Học Tiếng Anh A1 - 24 Bài Ôn Tập Tương Tác</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="h-full font-sans antialiased text-slate-800 flex flex-col md:flex-row overflow-hidden bg-slate-100">
+
+    <!-- Mobile Header -->
+    <div class="md:hidden bg-slate-900 text-white p-4 flex items-center justify-between shrink-0 shadow-md">
+        <div class="flex items-center space-x-3">
+            <div class="bg-brand-600 text-white p-2 rounded-lg text-lg font-bold">A1</div>
+            <div>
+                <h1 class="font-bold text-base leading-tight">A1 English Course</h1>
+                <p class="text-xs text-slate-400">24 Bài Học Ôn Tập</p>
+            </div>
+        </div>
+        <button id="toggleMenuBtn" class="p-2 text-slate-300 hover:text-white focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Sidebar / Drawer -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-80 bg-slate-900 text-slate-300 flex flex-col transition-transform duration-300 transform -translate-x-full md:relative md:translate-x-0 shrink-0 border-r border-slate-800">
+        
+        <!-- Sidebar Brand Header -->
+        <div class="p-5 border-b border-slate-800 hidden md:flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-brand-600 to-indigo-500 text-white p-2.5 rounded-xl text-xl font-black shadow-lg shadow-brand-500/30">
+                    A1
+                </div>
+                <div>
+                    <h1 class="font-bold text-white text-lg leading-tight">A1 Curriculum</h1>
+                    <p class="text-xs text-slate-400">Student Workbook Online</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Overview Widget -->
+        <div class="p-4 bg-slate-800/60 border-b border-slate-800">
+            <div class="flex justify-between items-center text-xs font-semibold text-slate-300 mb-1.5">
+                <span>Tiến độ học tập</span>
+                <span id="progressText" class="text-brand-400">0/24 (0%)</span>
+            </div>
+            <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                <div id="progressBar" class="bg-gradient-to-r from-brand-500 to-indigo-500 h-full w-0 transition-all duration-500"></div>
+            </div>
+        </div>
+
+        <!-- Course Materials Links (New) -->
+        <div class="p-4 bg-slate-800/40 border-b border-slate-800 space-y-2">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Tài liệu môn học</h3>
+            <a href="https://drive.google.com/drive/folders/1JHm2gM9XAbyOVvHmkowBs-IX4DcEoJCl" target="_blank" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition">
+                <i class="fa-solid fa-headphones text-brand-400 w-4 text-center"></i> File Nghe (Listening)
+            </a>
+            <a href="https://drive.google.com/drive/folders/1_PFqz5fmBWh0XPsf0rb7_6JxyJg5vueC" target="_blank" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition">
+                <i class="fa-solid fa-file-word text-blue-400 w-4 text-center"></i> Tài liệu (Docs)
+            </a>
+            <a href="https://drive.google.com/drive/folders/1W1gN8Bhvic8krAEk5n7czw5UXchJdyz9" target="_blank" class="flex items-center gap-2 text-sm text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 p-2 rounded-lg transition">
+                <i class="fa-solid fa-file-powerpoint text-orange-400 w-4 text-center"></i> Bài giảng (Slides)
+            </a>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="p-4 space-y-3 border-b border-slate-800">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="Tìm bài học, chủ đề..." class="w-full bg-slate-800 text-slate-200 text-sm rounded-lg pl-9 pr-3 py-2 border border-slate-700 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 placeholder-slate-500">
+            </div>
+            <div class="flex space-x-1 p-1 bg-slate-800 rounded-lg text-xs font-medium">
+                <button id="filterAll" class="filter-btn flex-1 py-1.5 rounded-md text-center bg-brand-600 text-white shadow-sm transition">Tất cả (24)</button>
+                <button id="filterGrammar" class="filter-btn flex-1 py-1.5 rounded-md text-center text-slate-400 hover:text-white transition">Ngữ pháp (10)</button>
+                <button id="filterTopic" class="filter-btn flex-1 py-1.5 rounded-md text-center text-slate-400 hover:text-white transition">Chủ đề (14)</button>
+            </div>
+        </div>
+
+        <!-- Lessons Navigation List -->
+        <div class="flex-1 overflow-y-auto p-3 space-y-1" id="lessonsList">
+            <!-- Dynamic lesson items populated by JavaScript -->
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="p-3 border-t border-slate-800 text-xs text-slate-500 flex items-center justify-between">
+            <span>Online Workbook</span>
+            <button id="resetProgressBtn" class="text-slate-400 hover:text-rose-400 transition flex items-center gap-1">
+                <i class="fa-solid fa-rotate-right"></i> Đặt lại
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile drawer -->
+    <div id="mobileOverlay" class="fixed inset-0 bg-slate-900/60 z-40 hidden md:hidden"></div>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden bg-slate-50 relative">
+        
+        <!-- Top Toolbar / Header -->
+        <header id="mainHeader" class="bg-white border-b border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-4 shadow-sm z-10 shrink-0">
+            <div class="flex items-center space-x-3">
+                <span id="lessonCategoryBadge" class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-brand-100 text-brand-700">
+                    TOPIC
+                </span>
+                <span id="lessonDuration" class="text-xs text-slate-500 font-medium flex items-center gap-1">
+                    <i class="fa-regular fa-clock"></i> 60 phút
+                </span>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <button id="toggleCompleteBtn" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 text-xs font-semibold rounded-lg transition flex items-center gap-1.5">
+                    <i class="fa-regular fa-circle-check"></i> Đánh dấu hoàn thành
+                </button>
+            </div>
+        </header>
+
+        <!-- Lesson Viewport -->
+        <div id="lessonViewport" class="flex-1 overflow-y-auto p-4 md:p-8 space-y-6 max-w-5xl mx-auto w-full">
+            <!-- Dynamic Lesson Content Rendered Here -->
+        </div>
+
+    </main>
+
+    <script>
+        // Comprehensive 24 Lessons Database
+        const LESSONS_DATA = [
+            {
+                id: 1,
+                title: "Lesson 1: The Alphabet & Numbers",
+                type: "TOPIC",
+                focus: "Đọc đúng 26 chữ cái, số đếm 0-100, và đánh vần tên/số điện thoại của bản thân",
+                intro: "Tiếng Anh không đọc theo mặt chữ như tiếng Việt. Học đúng tên chữ cái và số đếm ngay từ bài đầu tiên giúp bạn đánh vần tên riêng, đọc số điện thoại/giá tiền chính xác.",
+                alphabet: [
+                    { char: "A", ipa: "/eɪ/" }, { char: "B", ipa: "/biː/" }, { char: "C", ipa: "/siː/" }, { char: "D", ipa: "/diː/" },
+                    { char: "E", ipa: "/iː/" }, { char: "F", ipa: "/ef/" }, { char: "G", ipa: "/dʒiː/" }, { char: "H", ipa: "/eɪtʃ/" },
+                    { char: "I", ipa: "/aɪ/" }, { char: "J", ipa: "/dʒeɪ/" }, { char: "K", ipa: "/keɪ/" }, { char: "L", ipa: "/el/" },
+                    { char: "M", ipa: "/em/" }, { char: "N", ipa: "/en/" }, { char: "O", ipa: "/oʊ/" }, { char: "P", ipa: "/piː/" },
+                    { char: "Q", ipa: "/kjuː/" }, { char: "R", ipa: "/ɑːr/" }, { char: "S", ipa: "/es/" }, { char: "T", ipa: "/tiː/" },
+                    { char: "U", ipa: "/juː/" }, { char: "V", ipa: "/viː/" }, { char: "W", ipa: "/ˈdʌb.əl.juː/" }, { char: "X", ipa: "/eks/" },
+                    { char: "Y", ipa: "/waɪ/" }, { char: "Z", ipa: "/ziː/" }
+                ],
+                numbers0_20: [
+                    { num: "0", word: "zero" }, { num: "1", word: "one" }, { num: "2", word: "two" }, { num: "3", word: "three" },
+                    { num: "4", word: "four" }, { num: "5", word: "five" }, { num: "6", word: "six" }, { num: "7", word: "seven" },
+                    { num: "8", word: "eight" }, { num: "9", word: "nine" }, { num: "10", word: "ten" }, { num: "11", word: "eleven" },
+                    { num: "12", word: "twelve" }, { num: "13", word: "thirteen" }, { num: "14", word: "fourteen" }, { num: "15", word: "fifteen" },
+                    { num: "16", word: "sixteen" }, { num: "17", word: "seventeen" }, { num: "18", word: "eighteen" }, { num: "19", word: "nineteen" },
+                    { num: "20", word: "twenty" }
+                ],
+                structures: [
+                    { sit: "Hỏi cách đánh vần", expr: "How do you spell your name?", vn: "Bạn đánh vần tên thế nào?" },
+                    { sit: "Trả lời đánh vần", expr: "It's spelled T-H-U-Y.", vn: "Được đánh vần là T-H-U-Y." },
+                    { sit: "Hỏi số điện thoại", expr: "What's your phone number?", vn: "Số điện thoại của bạn là gì?" },
+                    { sit: "Hỏi giá", expr: "How much is this?", vn: "Cái này giá bao nhiêu?" }
+                ],
+                practice: [
+                    "Đánh vần tên đầy đủ của mình bằng tiếng Anh (ví dụ: L-A-N).",
+                    "Đếm từ 1 đến 20, sau đó đếm theo chục đến 100.",
+                    "Đọc to số điện thoại thật của mình bằng tiếng Anh, dùng cấu trúc 'My phone number is...'."
+                ]
+            },
+            {
+                id: 2,
+                title: "Lesson 2: Verb 'To Be'",
+                type: "GRAMMAR",
+                focus: "Sử dụng đúng am/is/are ở cả 3 dạng: khẳng định, phủ định, câu hỏi",
+                grammarNotes: [
+                    { title: "1. Câu Khẳng Định (Statements)", content: "I + am (I'm) <br/> You / We / They + are ('re) <br/> He / She / It + is ('s) <br/><em>Ví dụ: I am a student. She is a teacher.</em>" },
+                    { title: "2. Câu Phủ Định (Negatives)", content: "Thêm 'not' vào sau động từ To Be.<br/>I am not (I'm not) <br/> You / We / They + are not (aren't) <br/> He / She / It + is not (isn't) <br/><em>Ví dụ: They aren't at home. He isn't a doctor.</em>" },
+                    { title: "3. Câu Hỏi Yes/No & Trả lời ngắn", content: "Đảo am/is/are lên trước chủ ngữ.<br/>Am I...? -> Yes, you are. / No, you aren't. <br/> Is he/she/it...? -> Yes, she is. / No, she isn't. <br/> Are you/we/they...? -> Yes, they are. / No, they aren't." }
+                ],
+                rules: [
+                    "Dùng để Giới thiệu bản thân: I am Lan.",
+                    "Dùng để Nói về nghề nghiệp: He is a doctor.",
+                    "Dùng để Nói về đặc điểm/tính cách: She is friendly.",
+                    "Dùng để Nói về quê quán/nơi ở: We are from Hanoi."
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Hi, I'm Nam. I'm a student." },
+                    { speaker: "B", line: "Nice to meet you, Nam! I'm Mai. I'm a teacher. Are you from Hanoi?" },
+                    { speaker: "A", line: "No, I'm not. I'm from Da Nang. How old are you?" },
+                    { speaker: "B", line: "I'm 20 years old." }
+                ],
+                practice: [
+                    "Viết câu phủ định: I am tired. / He is a student. / They are at home.",
+                    "Điền am/is/are: 1. I ___ a teacher. 2. She ___ from Hue. 3. We ___ students. 4. They ___ tired.",
+                    "Đổi thành câu hỏi: 1. She is a teacher. 2. They are busy.",
+                    "Viết 4 câu giới thiệu về bản thân dùng am/is/are (tên, tuổi, nghề nghiệp, quê quán)."
+                ]
+            },
+            {
+                id: 3,
+                title: "Lesson 3: WH-Questions",
+                type: "GRAMMAR",
+                focus: "Đặt câu hỏi với What/Where/When/Who/Why/How để khai thác thông tin",
+                vocab: [
+                    { word: "What", pos: "Từ hỏi", meaning: "Cái gì / gì", ex: "What is your name?" },
+                    { word: "Where", pos: "Từ hỏi", meaning: "Ở đâu", ex: "Where are you from?" },
+                    { word: "When", pos: "Từ hỏi", meaning: "Khi nào", ex: "When is your birthday?" },
+                    { word: "Who", pos: "Từ hỏi", meaning: "Ai", ex: "Who is that man?" },
+                    { word: "Why", pos: "Từ hỏi", meaning: "Tại sao", ex: "Why are you late?" },
+                    { word: "How", pos: "Từ hỏi", meaning: "Như thế nào", ex: "How are you?" },
+                    { word: "What time", pos: "Từ hỏi", meaning: "Mấy giờ", ex: "What time is it?" }
+                ],
+                grammarNotes: [
+                    { title: "Cấu trúc với động từ To Be", content: "WH-word + am/is/are + Chủ ngữ? <br/><em>Ví dụ: Where are you from?</em><br/><br/> WH-word + am/is/are + Chủ ngữ + adj/noun? <br/><em>Ví dụ: How old are you?</em>" }
+                ],
+                rules: [
+                    "Câu hỏi Wh- KHÔNG BAO GIỜ trả lời bằng Yes/No. Phải trả lời bằng thông tin cụ thể.",
+                    "Từ 'Who' thường đứng đầu câu và có thể làm chủ ngữ: Who is your teacher? -> My teacher is Mr. Nam."
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Excuse me, what's your name?" },
+                    { speaker: "B", line: "I'm Hoa. Where are you from?" },
+                    { speaker: "A", line: "I'm from Hai Phong. How old are you, Hoa?" },
+                    { speaker: "B", line: "I'm twenty. What time is it now? I have to go soon." },
+                    { speaker: "A", line: "It's 3 o'clock. Nice to meet you!" }
+                ],
+                practice: [
+                    "Chọn đúng từ để hỏi: 1. ___ is your name? 2. ___ are you from? 3. ___ old are you?",
+                    "Đặt câu hỏi cho phần gạch chân: 1. I am from Hue. 2. She is 25 years old. 3. My teacher is Mr. Nam.",
+                    "Viết 5 câu hỏi Wh- bạn muốn hỏi một người bạn mới quen và tự đóng vai trả lời."
+                ]
+            },
+            {
+                id: 4,
+                title: "Lesson 4: Greetings & Personal Info",
+                type: "TOPIC",
+                focus: "Chào hỏi, giới thiệu bản thân & thông tin cá nhân",
+                vocab: [
+                    { word: "Hello / Hi", pos: "Thán từ", meaning: "Xin chào", ex: "Hello! How are you?" },
+                    { word: "Name", pos: "Danh từ", meaning: "Tên", ex: "What's your name?" },
+                    { word: "Meet", pos: "Động từ", meaning: "Gặp gỡ", ex: "Nice to meet you." },
+                    { word: "Address", pos: "Danh từ", meaning: "Địa chỉ", ex: "What's your address?" },
+                    { word: "Married / Single", pos: "Tính từ", meaning: "Đã kết hôn / Độc thân", ex: "Are you married or single?" }
+                ],
+                structures: [
+                    { sit: "Chào hỏi", expr: "Hello! / Hi! / How are you?", vn: "Xin chào! Bạn khỏe không?" },
+                    { sit: "Giới thiệu tên", expr: "My name is... / I'm...", vn: "Tên tôi là..." },
+                    { sit: "Hỏi quê quán", expr: "Where are you from?", vn: "Bạn đến từ đâu?" },
+                    { sit: "Hỏi tình trạng hôn nhân", expr: "Are you married?", vn: "Bạn đã kết hôn chưa?" }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Hi! I'm Lan." },
+                    { speaker: "B", line: "Hello, Lan! Nice to meet you. I'm Nam." },
+                    { speaker: "A", line: "Nice to meet you too. Where are you from?" },
+                    { speaker: "B", line: "I'm from Hue. How old are you?" },
+                    { speaker: "A", line: "I'm twenty-five. What's your phone number?" },
+                    { speaker: "B", line: "It's 098-345-6789." }
+                ],
+                practice: [
+                    "Đóng vai: Hỏi một người bạn mới các thông tin (Tên, Tuổi, Quê quán, Số điện thoại).",
+                    "Giới thiệu bản thân đầy đủ bằng 4-5 câu (tên, quê quán, tuổi, số điện thoại) một cách tự nhiên."
+                ]
+            },
+            {
+                id: 5,
+                title: "Lesson 5: Family",
+                type: "TOPIC",
+                focus: "Giới thiệu và mô tả gia đình",
+                vocab: [
+                    { word: "Family", pos: "Danh từ", meaning: "Gia đình", ex: "I have a big family." },
+                    { word: "Parents", pos: "Danh từ", meaning: "Bố mẹ", ex: "My parents live in Hanoi." },
+                    { word: "Brother / Sister", pos: "Danh từ", meaning: "Anh/em trai — chị/em gái", ex: "I have one brother." },
+                    { word: "Husband / Wife", pos: "Danh từ", meaning: "Chồng / Vợ", ex: "This is my husband." },
+                    { word: "Children / Kids", pos: "Danh từ", meaning: "Con cái", ex: "They have two children." }
+                ],
+                structures: [
+                    { sit: "Giới thiệu người thân", expr: "This is my... / These are my...", vn: "Đây là..." },
+                    { sit: "Nói số lượng", expr: "I have (one/two)...", vn: "Tôi có..." },
+                    { sit: "Mô tả số lượng thành viên", expr: "There are (four) people in my family.", vn: "Gia đình tôi có... người." }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Do you have any brothers or sisters?" },
+                    { speaker: "B", line: "Yes, I have one sister. What about you?" },
+                    { speaker: "A", line: "I have two brothers. How many people are there in your family?" },
+                    { speaker: "B", line: "There are four people — my parents, my sister and me." }
+                ],
+                practice: [
+                    "Vẽ cây gia đình đơn giản (3-5 người) ra giấy và chỉ vào từng người để giới thiệu.",
+                    "Nói ít nhất 4 câu liên tục để miêu tả về các thành viên trong gia đình của bạn."
+                ]
+            },
+            {
+                id: 6,
+                title: "Lesson 6: Possessive Adjectives & 's",
+                type: "GRAMMAR",
+                focus: "Nói về sở hữu (của tôi, của bạn...) và dùng sở hữu cách 's đúng cách",
+                grammarNotes: [
+                    { title: "Bảng Tính Từ Sở Hữu", content: "I -> my (của tôi) <br/> You -> your (của bạn) <br/> He -> his (của anh ấy) <br/> She -> her (của cô ấy) <br/> It -> its (của nó) <br/> We -> our (của chúng tôi) <br/> They -> their (của họ)" }
+                ],
+                rules: [
+                    "Tính từ sở hữu luôn đứng TRƯỚC danh từ: my book, her car.",
+                    "Dùng 's với Danh từ số ít: Lan's book (quyển sách của Lan).",
+                    "Dùng ' (dấu phẩy trên) với Danh từ số nhiều có sẵn -s: my parents' house (nhà của bố mẹ tôi).",
+                    "KHÔNG dùng 's cho đồ vật. Chỉ dùng cho người/động vật. Với đồ vật dùng 'of': the door of the room."
+                ],
+                practice: [
+                    "Điền tính từ sở hữu đúng: 1. This is ___ (I) pen. 2. Is that ___ (you) car? 3. ___ (they) children are friendly.",
+                    "Viết lại bằng 's: 1. the bag of Lan -> ___ 2. the car of my father -> ___",
+                    "Nói 5 câu dùng tính từ sở hữu (my/your/his/her...) để chỉ các đồ vật xung quanh bạn."
+                ]
+            },
+            {
+                id: 7,
+                title: "Lesson 7: There is / There are",
+                type: "GRAMMAR",
+                focus: "Nói về sự tồn tại của người/vật và dùng đúng danh từ số nhiều",
+                grammarNotes: [
+                    { title: "1. There is (Có một...)", content: "Đi với danh từ số ít hoặc không đếm được.<br/> Khẳng định: There is a table. <br/> Phủ định: There isn't a TV. <br/> Câu hỏi: Is there a bed?" },
+                    { title: "2. There are (Có những...)", content: "Đi với danh từ số nhiều.<br/> Khẳng định: There are three chairs. <br/> Phủ định: There aren't any chairs. <br/> Câu hỏi: Are there any windows?" }
+                ],
+                rules: [
+                    "Quy tắc Thêm -s: book -> books, chair -> chairs.",
+                    "Thêm -es (sau o, s, ss, sh, ch, x, z): box -> boxes, watch -> watches.",
+                    "Đổi y -> ies (sau phụ âm + y): baby -> babies, city -> cities.",
+                    "Bất quy tắc (Học thuộc): man -> men, woman -> women, child -> children, person -> people."
+                ],
+                practice: [
+                    "Chuyển các danh từ sau sang số nhiều: child, man, box, watch, woman.",
+                    "Điền There is/There are/Is there/Are there: 1. ___ any milk in the fridge? 2. ___ two eggs on the table.",
+                    "Mô tả phòng khách nhà bạn bằng 4 câu dùng cấu trúc There is/are."
+                ]
+            },
+            {
+                id: 8,
+                title: "Lesson 8: My House & My Things",
+                type: "TOPIC",
+                focus: "Miêu tả nhà cửa và vị trí đồ vật",
+                vocab: [
+                    { word: "Bedroom", pos: "Danh từ", meaning: "Phòng ngủ", ex: "My bedroom is small." },
+                    { word: "Kitchen", pos: "Danh từ", meaning: "Nhà bếp", ex: "There is a table in the kitchen." },
+                    { word: "Living room", pos: "Danh từ", meaning: "Phòng khách", ex: "We watch TV in the living room." },
+                    { word: "Bathroom", pos: "Danh từ", meaning: "Phòng tắm", ex: "The bathroom is clean." },
+                    { word: "Furniture", pos: "Danh từ", meaning: "Đồ nội thất", ex: "There isn't much furniture." }
+                ],
+                structures: [
+                    { sit: "Mô tả nhà", expr: "There is / There are... in my house.", vn: "Nhà tôi có..." },
+                    { sit: "Hỏi vị trí", expr: "Where is / are my...?", vn: "...ở đâu?" },
+                    { sit: "Trả lời vị trí", expr: "It's on / in / under / next to...", vn: "Nó ở trên/trong/dưới/cạnh..." }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Is there a TV in your living room?" },
+                    { speaker: "B", line: "Yes, there is. There's also a sofa and a small table." },
+                    { speaker: "A", line: "Where's your phone?" },
+                    { speaker: "B", line: "It's on the table, next to the sofa." }
+                ],
+                practice: [
+                    "Kể tên 5 đồ vật hiện đang có trong phòng ngủ của bạn và vị trí của chúng (on/in/under/next to).",
+                    "Thực hành đóng vai hỏi vị trí các đồ vật trong nhà."
+                ]
+            },
+            {
+                id: 9,
+                title: "Lesson 9: Simple Present",
+                type: "GRAMMAR",
+                focus: "Thì Hiện Tại Đơn: Thói quen, sự thật hằng ngày — đầy đủ khẳng định, phủ định, câu hỏi",
+                grammarNotes: [
+                    { title: "1. Câu Khẳng định", content: "I / You / We / They + V (nguyên thể). Ví dụ: I work every day. <br/> He / She / It + V(s/es). Ví dụ: She works every day." },
+                    { title: "2. Câu Phủ định", content: "I / You / We / They + don't + V (nguyên thể). Ví dụ: I don't like coffee. <br/> He / She / It + doesn't + V (nguyên thể). Ví dụ: She doesn't work on Sunday." },
+                    { title: "3. Câu hỏi Yes/No & WH-", content: "Yes/No: Do you like tea? -> Yes, I do. / Does she work here? -> No, she doesn't.<br/> WH-: What do you do every day? / Where does he live?" }
+                ],
+                rules: [
+                    "Dùng để nói về Thói quen hàng ngày: I get up at 6 AM.",
+                    "Dùng để nói về Sự thật hiển nhiên: Water boils at 100 degrees.",
+                    "Dùng để nói về Lịch trình cố định: The bus leaves at 7 AM."
+                ],
+                practice: [
+                    "Chia động từ: 1. She (work) ___ in a bank. 2. He (watch) ___ TV every night.",
+                    "Đổi thành câu hỏi và phủ định: 1. They live in Hue. 2. He likes coffee.",
+                    "Viết 3 câu sử dụng Simple Present (1 khẳng định, 1 phủ định, 1 câu hỏi) về bản thân."
+                ]
+            },
+            {
+                id: 10,
+                title: "Lesson 10: Adverbs of Frequency",
+                type: "GRAMMAR",
+                focus: "Sử dụng trạng từ chỉ tần suất (Always, Usually, Often, Sometimes, Rarely, Never)",
+                vocab: [
+                    { word: "always", pos: "Trạng từ", meaning: "Luôn luôn (100%)", ex: "I always have breakfast." },
+                    { word: "usually", pos: "Trạng từ", meaning: "Thường xuyên (80-90%)", ex: "She usually walks to work." },
+                    { word: "often", pos: "Trạng từ", meaning: "Thường thường (60-70%)", ex: "He often goes to the gym." },
+                    { word: "sometimes", pos: "Trạng từ", meaning: "Thỉnh thoảng (40-50%)", ex: "We sometimes eat out." },
+                    { word: "rarely", pos: "Trạng từ", meaning: "Hiếm khi (10-20%)", ex: "I rarely drink coffee at night." },
+                    { word: "never", pos: "Trạng từ", meaning: "Không bao giờ (0%)", ex: "He never smokes." }
+                ],
+                rules: [
+                    "Vị trí: Đứng SAU động từ 'to be': She is ALWAYS late.",
+                    "Vị trí: Đứng TRƯỚC động từ thường: I USUALLY walk to work.",
+                    "Câu hỏi tần suất: Dùng 'How often do you...?' (Ví dụ: How often do you go to the gym?)"
+                ],
+                dialogue: [
+                    { speaker: "A", line: "How often do you exercise?" },
+                    { speaker: "B", line: "I usually exercise three times a week. What about you?" },
+                    { speaker: "A", line: "I rarely exercise, but I always walk to work." },
+                    { speaker: "B", line: "That's good! I never walk — I always take the bus." }
+                ],
+                practice: [
+                    "Sắp xếp lại câu: (usually / I / breakfast / have) -> ...",
+                    "Điền trạng từ phù hợp: I ___ (100%) exercise in the morning. / She ___ (0%) smokes.",
+                    "Viết 4 câu thật về bản thân dùng các trạng từ always, usually, sometimes, never."
+                ]
+            },
+            {
+                id: 11,
+                title: "Lesson 11: Daily Routines",
+                type: "TOPIC",
+                focus: "Hoạt động hàng ngày & thời gian",
+                vocab: [
+                    { word: "Wake up", pos: "Cụm động từ", meaning: "Thức dậy", ex: "I wake up at 6 AM." },
+                    { word: "Have breakfast", pos: "Cụm động từ", meaning: "Ăn sáng", ex: "I have breakfast at 7." },
+                    { word: "Go to work", pos: "Cụm động từ", meaning: "Đi làm", ex: "She goes to work by bus." },
+                    { word: "Get home", pos: "Cụm động từ", meaning: "Về nhà", ex: "I get home at 6 PM." },
+                    { word: "Go to bed", pos: "Cụm động từ", meaning: "Đi ngủ", ex: "He goes to bed at 10 PM." }
+                ],
+                structures: [
+                    { sit: "Hỏi giờ làm việc gì", expr: "What time do you...?", vn: "Bạn... lúc mấy giờ?" },
+                    { sit: "Nói thói quen", expr: "I usually... every day.", vn: "Tôi thường... mỗi ngày." },
+                    { sit: "Hỏi lịch trình", expr: "What do you do every day?", vn: "Hằng ngày bạn làm gì?" }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What time do you wake up?" },
+                    { speaker: "B", line: "I usually wake up at 6 AM. What about you?" },
+                    { speaker: "A", line: "I wake up at 6:30. What time do you go to work?" },
+                    { speaker: "B", line: "I go to work at 7:30 and get home at 6 in the evening." }
+                ],
+                practice: [
+                    "Sắp xếp các hoạt động sau theo đúng thứ tự thời gian trong ngày: Get home, Wake up, Go to bed, Have breakfast, Go to work.",
+                    "Kể lại một ngày bình thường của bạn bằng 4-5 câu (bao gồm giờ giấc)."
+                ]
+            },
+            {
+                id: 12,
+                title: "Lesson 12: Jobs",
+                type: "TOPIC",
+                focus: "Nghề nghiệp & nơi làm việc",
+                vocab: [
+                    { word: "Job", pos: "Danh từ", meaning: "Công việc", ex: "What's your job?" },
+                    { word: "Colleague", pos: "Danh từ", meaning: "Đồng nghiệp", ex: "My colleagues are friendly." },
+                    { word: "Workplace", pos: "Danh từ", meaning: "Nơi làm việc", ex: "My office is in the city center." },
+                    { word: "Manager", pos: "Danh từ", meaning: "Quản lý / Sếp", ex: "My manager is very kind." },
+                    { word: "Salary", pos: "Danh từ", meaning: "Lương", ex: "The salary is quite good." }
+                ],
+                structures: [
+                    { sit: "Hỏi nghề nghiệp", expr: "What do you do? / What's your job?", vn: "Bạn làm nghề gì?" },
+                    { sit: "Trả lời nghề nghiệp", expr: "I'm a... / I work as a...", vn: "Tôi là.../ Tôi làm..." },
+                    { sit: "Hỏi nơi làm việc", expr: "Where do you work?", vn: "Bạn làm việc ở đâu?" },
+                    { sit: "Hỏi cảm nhận", expr: "Do you like your job?", vn: "Bạn có thích công việc không?" }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What do you do?" },
+                    { speaker: "B", line: "I'm an accountant. I work at a small company. What about you?" },
+                    { speaker: "A", line: "I work as a driver. Do you like your job?" },
+                    { speaker: "B", line: "Yes, I do, but my manager is very strict." }
+                ],
+                practice: [
+                    "Ghép nghề nghiệp với nơi làm việc tương ứng: Teacher, Doctor, Chef, Accountant (với School, Hospital, Restaurant, Office).",
+                    "Đóng vai hỏi/đáp về công việc hiện tại của bạn: Bạn làm gì? Ở đâu? Cảm nhận ra sao?"
+                ]
+            },
+            {
+                id: 13,
+                title: "Lesson 13: Free Time & Hobbies",
+                type: "TOPIC",
+                focus: "Sở thích & thời gian rảnh",
+                vocab: [
+                    { word: "Hobby", pos: "Danh từ", meaning: "Sở thích", ex: "My hobby is reading." },
+                    { word: "Watch TV", pos: "Cụm động từ", meaning: "Xem TV", ex: "I watch TV in the evening." },
+                    { word: "Listen to music", pos: "Cụm động từ", meaning: "Nghe nhạc", ex: "She listens to music every day." },
+                    { word: "Play sports", pos: "Cụm động từ", meaning: "Chơi thể thao", ex: "We play football on weekends." }
+                ],
+                structures: [
+                    { sit: "Hỏi sở thích", expr: "What do you do in your free time?", vn: "Lúc rảnh bạn làm gì?" },
+                    { sit: "Nói sở thích", expr: "I like / love / enjoy + V-ing", vn: "Tôi thích..." },
+                    { sit: "Hỏi tần suất", expr: "How often do you...?", vn: "Bạn có hay...không?" }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What do you do in your free time?" },
+                    { speaker: "B", line: "I enjoy listening to music. What about you?" },
+                    { speaker: "A", line: "I love playing football. How often do you listen to music?" },
+                    { speaker: "B", line: "Almost every day! It helps me relax." }
+                ],
+                practice: [
+                    "Hoàn thành câu về bản thân: In my free time, I like... / I don’t like...",
+                    "Thực hành chia sẻ 2 sở thích của bạn và tần suất bạn làm việc đó."
+                ]
+            },
+            {
+                id: 14,
+                title: "Lesson 14: Simple Past — 'To Be'",
+                type: "GRAMMAR",
+                focus: "Nói về trạng thái/sự việc trong quá khứ với was/were",
+                grammarNotes: [
+                    { title: "1. Khẳng Định & Phủ Định", content: "I / He / She / It + WAS (wasn't) <br/> You / We / They + WERE (weren't) <br/><em>Ví dụ: I was at home yesterday. They weren't happy.</em>" },
+                    { title: "2. Câu Hỏi", content: "Was + I/he/she/it...? <br/> Were + you/we/they...? <br/><em>Ví dụ: Were you tired after work?</em>" }
+                ],
+                rules: [
+                    "Các từ chỉ thời gian thường dùng trong quá khứ: yesterday (hôm qua), last night (tối qua), last week (tuần trước), last month (tháng trước), two days ago (2 ngày trước)."
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Were you at the meeting yesterday?" },
+                    { speaker: "B", line: "No, I wasn't. I was sick. Was it important?" },
+                    { speaker: "A", line: "Yes, it was. We were there for two hours." }
+                ],
+                practice: [
+                    "Điền was/were: 1. I ___ busy yesterday. 2. They ___ at the party last night.",
+                    "Đổi thành câu hỏi: 1. He was tired. 2. You were late.",
+                    "Viết 3 câu thật về nơi bạn đã ở vào các thời điểm khác nhau trong tuần trước (yesterday / last night / last weekend)."
+                ]
+            },
+            {
+                id: 15,
+                title: "Lesson 15: Last Weekend",
+                type: "TOPIC",
+                focus: "Kể về các hoạt động cuối tuần đã qua",
+                vocab: [
+                    { word: "Weekend", pos: "Danh từ", meaning: "Cuối tuần", ex: "I relax on the weekend." },
+                    { word: "Stay home", pos: "Cụm động từ", meaning: "Ở nhà", ex: "I stayed home last Sunday." },
+                    { word: "Visit", pos: "Động từ", meaning: "Đến thăm", ex: "We visited our grandparents." },
+                    { word: "Tired", pos: "Tính từ", meaning: "Mệt mỏi", ex: "I was tired after the trip." }
+                ],
+                structures: [
+                    { sit: "Hỏi cuối tuần đã làm gì", expr: "What did you do last weekend?", vn: "Cuối tuần rồi bạn đã làm gì?" },
+                    { sit: "Trả lời", expr: "I went to... / I stayed home.", vn: "Tôi đã đi... / Tôi ở nhà." },
+                    { sit: "Hỏi cảm nhận", expr: "Was it fun?", vn: "Có vui không?" }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What did you do last weekend?" },
+                    { speaker: "B", line: "I visited my parents. We had dinner together. It was great!" },
+                    { speaker: "A", line: "That sounds nice. I stayed home and watched movies." },
+                    { speaker: "B", line: "Was it relaxing?" }
+                ],
+                practice: [
+                    "Ghép động từ nguyên thể với dạng quá khứ: go, stay, visit, watch.",
+                    "Kể về cuối tuần trước của bạn bằng 3-4 câu ở thì quá khứ (Simple Past)."
+                ]
+            },
+            {
+                id: 16,
+                title: "Lesson 16: Simple Past — Verbs",
+                type: "GRAMMAR",
+                focus: "Chia đúng động từ có quy tắc (-ed) & bất quy tắc ở quá khứ, dùng did/didn't",
+                grammarNotes: [
+                    { title: "Động từ Bất quy tắc thường gặp", content: "go -> went <br/> have -> had <br/> do -> did <br/> see -> saw <br/> eat -> ate <br/> buy -> bought <br/> meet -> met <br/> take -> took" },
+                    { title: "Câu Phủ định & Câu hỏi", content: "Phủ định: didn't + Động từ NGUYÊN THỂ (I didn't go to work) <br/> Câu hỏi: Did + Chủ ngữ + Động từ NGUYÊN THỂ? (Did you see that movie?)" }
+                ],
+                rules: [
+                    "Thêm -ed thông thường: play -> played, watch -> watched.",
+                    "Động từ kết thúc bằng -e, chỉ thêm -d: live -> lived, like -> liked.",
+                    "Phụ âm + y chuyển thành -ied: study -> studied, try -> tried.",
+                    "Động từ 1 âm tiết, kết thúc 1 nguyên âm + 1 phụ âm -> nhân đôi phụ âm: stop -> stopped, plan -> planned."
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Did you have breakfast this morning?" },
+                    { speaker: "B", line: "Yes, I did. I ate rice and eggs. Did you go to work yesterday?" },
+                    { speaker: "A", line: "No, I didn't. I stayed home and studied English." }
+                ],
+                practice: [
+                    "Chia động từ đúng thì quá khứ: 1. I (go) ___ to the market. 2. She (study) ___ English last night. 3. We (buy) ___ some fruit.",
+                    "Đổi thành phủ định và câu hỏi: He watched TV last night.",
+                    "Kể lại 4 việc bạn đã làm hôm qua, dùng ít nhất 2 động từ có quy tắc và 2 động từ bất quy tắc."
+                ]
+            },
+            {
+                id: 17,
+                title: "Lesson 17: Food & Ordering",
+                type: "TOPIC",
+                focus: "Gọi món ăn và đồ uống tại nhà hàng",
+                vocab: [
+                    { word: "Menu", pos: "Danh từ", meaning: "Thực đơn", ex: "Can I see the menu, please?" },
+                    { word: "Order", pos: "Động từ", meaning: "Gọi món", ex: "I'd like to order now." },
+                    { word: "Delicious", pos: "Tính từ", meaning: "Ngon", ex: "This soup is delicious." },
+                    { word: "Bill", pos: "Danh từ", meaning: "Hóa đơn", ex: "Can I have the bill, please?" }
+                ],
+                structures: [
+                    { sit: "Gọi món", expr: "Can I have... ? / I'd like...", vn: "Cho tôi... / Tôi muốn..." },
+                    { sit: "Xin hóa đơn", expr: "Can I have the bill, please?", vn: "Cho tôi xin hóa đơn." }
+                ],
+                dialogue: [
+                    { speaker: "Waiter", line: "Good evening! Are you ready to order?" },
+                    { speaker: "Guest", line: "Yes, I'd like chicken rice and an orange juice, please." },
+                    { speaker: "Waiter", line: "Sure. Anything else?" },
+                    { speaker: "Guest", line: "No, that's all. Excuse me, can I have the bill, please?" }
+                ],
+                practice: [
+                    "Thực hành đóng vai: Bạn là khách hàng, gọi 2 món ăn và 1 đồ uống bạn thích.",
+                    "Hỏi xin hóa đơn bằng tiếng Anh."
+                ]
+            },
+            {
+                id: 18,
+                title: "Lesson 18: Present Continuous",
+                type: "GRAMMAR",
+                focus: "Thì Hiện Tại Tiếp Diễn (am/is/are + V-ing) & So sánh với Hiện tại đơn",
+                grammarNotes: [
+                    { title: "Cấu trúc (Form)", content: "Chủ ngữ + am/is/are + V-ing. <br/><em>Ví dụ: I am reading a book. She is cooking dinner. They are watching TV.</em>" },
+                    { title: "So sánh Simple Present & Continuous", content: "<strong>Simple Present (Hiện tại đơn)</strong>: Dùng cho thói quen, sự thật (I work every day). KHÔNG dùng cho việc đang xảy ra.<br/><br/><strong>Present Continuous (Tiếp diễn)</strong>: Dùng cho việc ĐANG diễn ra NGAY BÂY GIỜ (I am working now). Thường đi với: now, right now, at the moment." }
+                ],
+                rules: [
+                    "Quy tắc chung: Thêm -ing (read -> reading, watch -> watching).",
+                    "Động từ bỏ chữ -e cuối, thêm -ing: make -> making, write -> writing.",
+                    "Nhân đôi phụ âm cuối (từ ngắn 1 âm tiết): run -> running, sit -> sitting."
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What are you doing?" },
+                    { speaker: "B", line: "I'm cooking dinner right now. What about you?" },
+                    { speaker: "A", line: "I'm watching TV. Are the kids studying?" },
+                    { speaker: "B", line: "No, they're playing in the garden." }
+                ],
+                practice: [
+                    "Chia động từ: 1. Look! She (cook) ___ dinner. 2. I usually (walk) ___ to work, but today I (drive) ___.",
+                    "Đổi thành câu hỏi và phủ định: They are watching TV.",
+                    "Nhìn xung quanh phòng bạn NGAY BÂY GIỜ, đặt 3 câu miêu tả xem ai/con vật nào đang làm gì."
+                ]
+            },
+            {
+                id: 19,
+                title: "Lesson 19: What Are You Doing?",
+                type: "TOPIC",
+                focus: "Hỏi & miêu tả các hành động đang diễn ra",
+                vocab: [
+                    { word: "Cook", pos: "Động từ", meaning: "Nấu ăn", ex: "She is cooking now." },
+                    { word: "Drive", pos: "Động từ", meaning: "Lái xe", ex: "They are driving to work." },
+                    { word: "Sleep", pos: "Động từ", meaning: "Ngủ", ex: "The baby is sleeping." },
+                    { word: "Read", pos: "Động từ", meaning: "Đọc", ex: "He is reading a book." }
+                ],
+                structures: [
+                    { sit: "Hỏi hành động", expr: "What are you doing?", vn: "Bạn đang làm gì?" },
+                    { sit: "Trả lời", expr: "I'm + V-ing", vn: "Tôi đang..." },
+                    { sit: "Gây chú ý", expr: "Look! He's...", vn: "Nhìn kìa! Anh ấy đang..." }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Hi! What are you doing?" },
+                    { speaker: "B", line: "I'm reading a book. What about you?" },
+                    { speaker: "A", line: "I'm cooking dinner. Look, my son is sleeping on the sofa!" }
+                ],
+                practice: [
+                    "Tự đặt câu hỏi 'What are you doing?' và trả lời với 3 hành động khác nhau.",
+                    "Chơi trò đoán hành động (Charades): Diễn tả hành động (không nói) để người khác đoán bằng tiếng Anh."
+                ]
+            },
+            {
+                id: 20,
+                title: "Lesson 20: Modals - Can, Should & Have to",
+                type: "GRAMMAR",
+                focus: "Nói về khả năng (Can), lời khuyên (Should) và sự cần thiết/bắt buộc (Have to)",
+                grammarNotes: [
+                    { title: "1. CAN (Khả năng/Xin phép)", content: "S + can/can't + V(nguyên thể). <br/><em>Ví dụ: I can swim. Can I try this on?</em>" },
+                    { title: "2. SHOULD (Lời khuyên)", content: "S + should/shouldn't + V(nguyên thể). Dùng để đưa ra lời khuyên, không bắt buộc. <br/><em>Ví dụ: You should see a doctor. You shouldn't smoke.</em>" },
+                    { title: "3. HAVE TO (Bắt buộc)", content: "S + have to / has to + V(nguyên thể). Nói về việc bắt buộc phải làm do quy định, hoàn cảnh. <br/><em>Ví dụ: I have to work tomorrow. She has to leave now.</em>" }
+                ],
+                rules: [
+                    "'can', 'should' KHÔNG BAO GIỜ chia theo chủ ngữ, không thêm -s: She can swim (không phải 'cans').",
+                    "'have to' CÓ chia theo chủ ngữ ở ngôi thứ 3 số ít: he/she/it has to (không phải 'have to').",
+                    "Phủ định của have to là 'don't have to / doesn't have to' = 'không cần, không bắt buộc'.",
+                    "Câu hỏi have to phải dùng Do/Does: Do you have to work on Sunday?"
+                ],
+                dialogue: [
+                    { speaker: "A", line: "I'm so tired. I have to work every weekend this month." },
+                    { speaker: "B", line: "That's a lot! You should take a day off." },
+                    { speaker: "A", line: "I can't — I have to finish this project. Can you help me?" },
+                    { speaker: "B", line: "Sure, I can help! You shouldn't work too hard though." }
+                ],
+                practice: [
+                    "Hoàn thành câu: 1. I ___ (can/cook) very well. 2. You ___ (should/see) a doctor. 3. She ___ (have to) work tomorrow.",
+                    "Cho lời khuyên (dùng should) cho một người bạn đang bị ốm/mệt mỏi.",
+                    "Viết 3 câu về bản thân: 1 câu dùng can, 1 câu dùng should, 1 câu dùng have to."
+                ]
+            },
+            {
+                id: 21,
+                title: "Lesson 21: Shopping",
+                type: "TOPIC",
+                focus: "Mua sắm, hỏi giá, thử đồ",
+                vocab: [
+                    { word: "Price", pos: "Danh từ", meaning: "Giá tiền", ex: "What's the price of this shirt?" },
+                    { word: "Expensive", pos: "Tính từ", meaning: "Đắt", ex: "This bag is expensive." },
+                    { word: "Try on", pos: "Cụm động từ", meaning: "Thử quần áo", ex: "Can I try this on?" },
+                    { word: "Size", pos: "Danh từ", meaning: "Kích cỡ", ex: "Do you have a bigger size?" }
+                ],
+                structures: [
+                    { sit: "Hỏi giá", expr: "How much is / are...?", vn: "Cái này giá bao nhiêu?" },
+                    { sit: "Xin thử đồ", expr: "Can I try this on?", vn: "Tôi có thể thử cái này không?" },
+                    { sit: "Quyết định mua", expr: "I'll take it.", vn: "Tôi sẽ lấy cái này." }
+                ],
+                dialogue: [
+                    { speaker: "Customer", line: "Excuse me, how much is this shirt?" },
+                    { speaker: "Seller", line: "It's 250,000 dong." },
+                    { speaker: "Customer", line: "Can I try it on? Do you have a bigger size?" },
+                    { speaker: "Seller", line: "Sure, here you are." },
+                    { speaker: "Customer", line: "Great, I'll take it!" }
+                ],
+                practice: [
+                    "Đóng vai đi mua sắm: Hỏi giá 1 món đồ và xin thử món đồ đó.",
+                    "Hỏi người bán xem họ có kích cỡ lớn hơn hoặc nhỏ hơn không."
+                ]
+            },
+            {
+                id: 22,
+                title: "Lesson 22: Asking for Directions",
+                type: "TOPIC",
+                focus: "Hỏi và chỉ đường",
+                vocab: [
+                    { word: "Turn left/right", pos: "Cụm động từ", meaning: "Rẽ trái / phải", ex: "Turn left at the corner." },
+                    { word: "Go straight", pos: "Cụm động từ", meaning: "Đi thẳng", ex: "Go straight ahead." },
+                    { word: "Corner", pos: "Danh từ", meaning: "Góc đường", ex: "The bank is on the corner." },
+                    { word: "Next to / Between", pos: "Giới từ", meaning: "Cạnh / Giữa", ex: "It's next to the market." }
+                ],
+                structures: [
+                    { sit: "Hỏi đường", expr: "Excuse me, where is...?", vn: "Xin lỗi, ...ở đâu?" },
+                    { sit: "Chỉ đường", expr: "Go straight, then turn left/right.", vn: "Đi thẳng, rồi rẽ trái/phải." },
+                    { sit: "Hỏi khoảng cách", expr: "Is it far from here?", vn: "Có xa đây không?" }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "Excuse me, where is the bus station?" },
+                    { speaker: "B", line: "Go straight ahead, then turn left. It's next to the market." },
+                    { speaker: "A", line: "Is it far from here?" },
+                    { speaker: "B", line: "No, it's about five minutes on foot." }
+                ],
+                practice: [
+                    "Thực hành chỉ đường từ nhà bạn đến một địa điểm quen thuộc (ví dụ: siêu thị gần nhà).",
+                    "Hỏi đường một người lạ bằng cấu trúc 'Excuse me, where is...?'."
+                ]
+            },
+            {
+                id: 23,
+                title: "Lesson 23: Weather & Seasons",
+                type: "TOPIC",
+                focus: "Hỏi đáp về thời tiết và các mùa",
+                vocab: [
+                    { word: "Sunny / Rainy", pos: "Tính từ", meaning: "Nắng / Mưa", ex: "It's sunny today." },
+                    { word: "Cold / Hot", pos: "Tính từ", meaning: "Lạnh / Nóng", ex: "It's cold in winter." },
+                    { word: "Season", pos: "Danh từ", meaning: "Mùa", ex: "My favourite season is autumn." }
+                ],
+                structures: [
+                    { sit: "Hỏi thời tiết", expr: "What's the weather like today?", vn: "Hôm nay thời tiết thế nào?" },
+                    { sit: "Trả lời", expr: "It's sunny / rainy / cold / hot.", vn: "Trời nắng/mưa/lạnh/nóng." }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What's the weather like today?" },
+                    { speaker: "B", line: "It's sunny but a bit cold. What about in your city?" },
+                    { speaker: "A", line: "It's rainy today. What's your favourite season?" },
+                    { speaker: "B", line: "I like autumn. It's not too hot or too cold." }
+                ],
+                practice: [
+                    "Nối các mùa (Spring, Summer, Autumn, Winter) với kiểu thời tiết thường gặp tương ứng.",
+                    "Miêu tả thời tiết hôm nay ở chỗ bạn và nói về mùa mà bạn yêu thích nhất."
+                ]
+            },
+            {
+                id: 24,
+                title: "Lesson 24: Making Plans",
+                type: "TOPIC",
+                focus: "Lên kế hoạch, rủ rê & hẹn gặp",
+                vocab: [
+                    { word: "Plan", pos: "Danh từ", meaning: "Kế hoạch", ex: "What's your plan for the weekend?" },
+                    { word: "Meet up", pos: "Cụm động từ", meaning: "Gặp nhau", ex: "Let's meet up on Saturday." },
+                    { word: "Free", pos: "Tính từ", meaning: "Rảnh rỗi", ex: "Are you free this afternoon?" },
+                    { word: "Sounds good", pos: "Cụm từ", meaning: "Nghe hay đấy", ex: "Sounds good! See you then." }
+                ],
+                structures: [
+                    { sit: "Hỏi kế hoạch", expr: "What are you doing this weekend?", vn: "Cuối tuần này bạn định làm gì?" },
+                    { sit: "Rủ đi cùng", expr: "Would you like to...? / Let's...", vn: "Bạn có muốn...? / Chúng ta..." },
+                    { sit: "Đồng ý", expr: "Sounds good! / Sure, let's do that.", vn: "Nghe hay đấy! / Được chứ." }
+                ],
+                dialogue: [
+                    { speaker: "A", line: "What are you doing this weekend?" },
+                    { speaker: "B", line: "I'm not sure yet. Are you free?" },
+                    { speaker: "A", line: "Yes, I'm free on Saturday afternoon. Would you like to meet up?" },
+                    { speaker: "B", line: "Sounds good! Let's meet at the coffee shop at 3 PM." }
+                ],
+                practice: [
+                    "Lên kế hoạch cho cuối tuần: Hỏi một người bạn xem họ rảnh không, rủ đi đâu đó và thống nhất giờ gặp.",
+                    "Tự viết/đóng vai một đoạn hội thoại ngắn rủ rê bạn bè, kết hợp ít nhất 3 điểm ngữ pháp đã học."
+                ]
+            }
+        ];
+
+        // App State
+        let currentLessonId = 1;
+        let activeCategoryFilter = "ALL";
+        let searchQuery = "";
+        let completedLessons = JSON.parse(localStorage.getItem("completedLessons_a1") || "[]");
+
+        // DOM Elements
+        const lessonsListEl = document.getElementById("lessonsList");
+        const lessonViewportEl = document.getElementById("lessonViewport");
+        const searchInputEl = document.getElementById("searchInput");
+        const filterAllBtn = document.getElementById("filterAll");
+        const filterGrammarBtn = document.getElementById("filterGrammar");
+        const filterTopicBtn = document.getElementById("filterTopic");
+        const progressBarEl = document.getElementById("progressBar");
+        const progressTextEl = document.getElementById("progressText");
+        const toggleCompleteBtn = document.getElementById("toggleCompleteBtn");
+        const sidebarEl = document.getElementById("sidebar");
+        const toggleMenuBtn = document.getElementById("toggleMenuBtn");
+        const mobileOverlayEl = document.getElementById("mobileOverlay");
+        const resetProgressBtn = document.getElementById("resetProgressBtn");
+
+        function updateProgressUI() {
+            const count = completedLessons.length;
+            const percent = Math.round((count / 24) * 100);
+            progressBarEl.style.width = `${percent}%`;
+            progressTextEl.textContent = `${count}/24 (${percent}%)`;
+
+            // Update header completion button
+            const isDone = completedLessons.includes(currentLessonId);
+            if (isDone) {
+                toggleCompleteBtn.className = "px-3 py-1.5 bg-emerald-600 text-white hover:bg-emerald-700 text-xs font-semibold rounded-lg transition flex items-center gap-1.5 shadow-sm";
+                toggleCompleteBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i> Đã hoàn thành`;
+            } else {
+                toggleCompleteBtn.className = "px-3 py-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 text-xs font-semibold rounded-lg transition flex items-center gap-1.5";
+                toggleCompleteBtn.innerHTML = `<i class="fa-regular fa-circle"></i> Đánh dấu hoàn thành`;
+            }
+        }
+
+        function renderLessonsList() {
+            lessonsListEl.innerHTML = "";
+            
+            const filtered = LESSONS_DATA.filter(lesson => {
+                const matchesType = activeCategoryFilter === "ALL" || lesson.type === activeCategoryFilter;
+                const matchesSearch = lesson.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      lesson.focus.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesType && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                lessonsListEl.innerHTML = `<div class="p-4 text-center text-xs text-slate-500">Không tìm thấy bài học phù hợp</div>`;
+                return;
+            }
+
+            filtered.forEach(lesson => {
+                const isSelected = lesson.id === currentLessonId;
+                const isCompleted = completedLessons.includes(lesson.id);
+
+                const btn = document.createElement("button");
+                btn.className = `w-full text-left p-3 rounded-xl transition duration-200 flex items-center justify-between group ${
+                    isSelected ? "bg-brand-600 text-white shadow-md shadow-brand-900/50" : "hover:bg-slate-800 text-slate-300"
+                }`;
+
+                btn.onclick = () => {
+                    currentLessonId = lesson.id;
+                    renderCurrentLesson();
+                    renderLessonsList();
+                    // Close sidebar on mobile
+                    sidebarEl.classList.add("-translate-x-full");
+                    mobileOverlayEl.classList.add("hidden");
+                };
+
+                btn.innerHTML = `
+                    <div class="flex items-center space-x-3 overflow-hidden">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs font-bold ${
+                            isCompleted 
+                                ? (isSelected ? "bg-emerald-400 text-slate-900" : "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30") 
+                                : (isSelected ? "bg-white/20 text-white" : "bg-slate-800 text-slate-400 border border-slate-700")
+                        }">
+                            ${isCompleted ? '<i class="fa-solid fa-check"></i>' : lesson.id}
+                        </div>
+                        <div class="truncate">
+                            <p class="text-xs font-bold truncate leading-snug ${isSelected ? "text-white" : "text-slate-200"}">${lesson.title.replace(`Lesson ${lesson.id}: `, '')}</p>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold opacity-75">${lesson.type}</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs opacity-0 group-hover:opacity-100 transition-opacity ${isSelected ? 'opacity-100' : ''}"></i>
+                `;
+
+                lessonsListEl.appendChild(btn);
+            });
+        }
+
+        function renderCurrentLesson() {
+            const lesson = LESSONS_DATA.find(l => l.id === currentLessonId);
+            if (!lesson) return;
+
+            // Header metadata
+            document.getElementById("lessonCategoryBadge").textContent = lesson.type;
+            document.getElementById("lessonCategoryBadge").className = `px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider ${
+                lesson.type === 'GRAMMAR' ? 'bg-purple-100 text-purple-700' : 'bg-brand-100 text-brand-700'
+            }`;
+
+            updateProgressUI();
+
+            let html = `
+                <!-- Lesson Header Title Card -->
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 text-white rounded-2xl p-6 shadow-xl border border-slate-700/50">
+                    <div class="flex items-center gap-2 text-brand-400 font-bold text-xs uppercase tracking-widest mb-1">
+                        <span>Bài ${lesson.id} / 24</span> • <span>${lesson.type}</span>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-extrabold mb-3 text-white tracking-tight">${lesson.title}</h1>
+                    <p class="text-slate-300 text-sm leading-relaxed bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/60 flex items-start gap-2.5">
+                        <i class="fa-solid fa-bullseye text-brand-400 mt-1 shrink-0"></i>
+                        <span><strong>Mục tiêu:</strong> ${lesson.focus}</span>
+                    </p>
+                </div>
+            `;
+
+            // Lesson 1 Special: Alphabet & Numbers
+            if (lesson.id === 1) {
+                html += `
+                    <!-- Alphabet Section -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-font text-brand-600"></i> Bảng chữ cái (26 Letters)
+                        </h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                            ${lesson.alphabet.map(item => `
+                                <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl text-center">
+                                    <div class="text-xl font-black text-slate-800">${item.char}</div>
+                                    <div class="text-xs text-slate-500 font-mono">${item.ipa}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Numbers Section -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-arrow-down-1-9 text-brand-600"></i> Số đếm 0 - 20
+                        </h2>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+                            ${lesson.numbers0_20.map(item => `
+                                <div class="p-2.5 bg-slate-50 border border-slate-200 rounded-lg text-left flex items-center justify-between">
+                                    <div>
+                                        <span class="font-bold text-slate-700 text-sm">${item.num}</span>
+                                        <span class="text-xs text-slate-600 ml-2 font-medium">${item.word}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Vocabulary Section (if present)
+            if (lesson.vocab) {
+                html += `
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-book-open text-brand-600"></i> Từ vựng trọng tâm
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            ${lesson.vocab.map(v => `
+                                <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 flex items-start justify-between gap-3">
+                                    <div class="space-y-1">
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-slate-900 text-base">${v.word}</span>
+                                            <span class="text-[10px] font-semibold bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded">${v.pos}</span>
+                                        </div>
+                                        <p class="text-xs text-brand-700 font-medium">${v.meaning}</p>
+                                        <p class="text-xs text-slate-500 italic">Ex: "${v.ex}"</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Grammar Notes / Rules Section
+            if (lesson.grammarNotes || lesson.rules) {
+                html += `
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                        <h2 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-purple-600"></i> Kiến thức Ngữ Pháp
+                        </h2>
+                        ${lesson.grammarNotes ? lesson.grammarNotes.map(g => `
+                            <div class="p-4 bg-purple-50/60 rounded-xl border border-purple-100">
+                                <h3 class="font-bold text-purple-900 text-sm mb-1">${g.title}</h3>
+                                <p class="text-xs text-purple-800 leading-relaxed">${g.content}</p>
+                            </div>
+                        `).join('') : ''}
+                        ${lesson.rules ? `
+                            <ul class="space-y-2 text-xs text-slate-700">
+                                ${lesson.rules.map(r => `
+                                    <li class="flex items-start gap-2 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                        <i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i>
+                                        <span>${r}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            // Useful Structures
+            if (lesson.structures) {
+                html += `
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-comments text-emerald-600"></i> Mẫu câu giao tiếp thông dụng
+                        </h2>
+                        <div class="space-y-2.5">
+                            ${lesson.structures.map(s => `
+                                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-3">
+                                    <div>
+                                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block mb-0.5">${s.sit}</span>
+                                        <p class="font-semibold text-slate-800 text-sm">${s.expr}</p>
+                                        <p class="text-xs text-slate-500">${s.vn}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Sample Dialogue Section
+            if (lesson.dialogue) {
+                html += `
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-comments text-indigo-600"></i> Hội thoại mẫu (Sample Dialogue)
+                        </h2>
+                        <div class="space-y-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            ${lesson.dialogue.map(d => `
+                                <div class="flex items-start gap-3">
+                                    <span class="w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                                        ${d.speaker}
+                                    </span>
+                                    <div class="flex-1 bg-white p-3 rounded-xl border border-slate-200 text-xs md:text-sm text-slate-800 flex items-center justify-between">
+                                        <span>${d.line}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Practice Section (Bài tập luyện tập)
+            if (lesson.practice && lesson.practice.length > 0) {
+                html += `
+                    <div class="bg-indigo-50/50 rounded-2xl p-6 shadow-sm border border-indigo-100 mt-4">
+                        <h2 class="text-lg font-bold text-indigo-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-pen-to-square text-indigo-600"></i> Bài tập luyện tập
+                        </h2>
+                        <ul class="space-y-3">
+                            ${lesson.practice.map(p => `
+                                <li class="flex items-start gap-2.5 bg-white p-3.5 rounded-xl border border-indigo-100/60 shadow-sm">
+                                    <i class="fa-solid fa-check text-indigo-400 mt-0.5 shrink-0"></i>
+                                    <span class="text-sm text-slate-700 font-medium">${p}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            lessonViewportEl.innerHTML = html;
+            lessonViewportEl.scrollTop = 0;
+        }
+
+        // Search & Filter Listeners
+        searchInputEl.addEventListener("input", (e) => {
+            searchQuery = e.target.value;
+            renderLessonsList();
+        });
+
+        function setFilter(cat, activeBtn) {
+            activeCategoryFilter = cat;
+            [filterAllBtn, filterGrammarBtn, filterTopicBtn].forEach(b => {
+                b.className = "filter-btn flex-1 py-1.5 rounded-md text-center text-slate-400 hover:text-white transition";
+            });
+            activeBtn.className = "filter-btn flex-1 py-1.5 rounded-md text-center bg-brand-600 text-white shadow-sm transition";
+            renderLessonsList();
+        }
+
+        filterAllBtn.onclick = () => setFilter("ALL", filterAllBtn);
+        filterGrammarBtn.onclick = () => setFilter("GRAMMAR", filterGrammarBtn);
+        filterTopicBtn.onclick = () => setFilter("TOPIC", filterTopicBtn);
+
+        // Completion toggle listener
+        toggleCompleteBtn.onclick = () => {
+            if (completedLessons.includes(currentLessonId)) {
+                completedLessons = completedLessons.filter(id => id !== currentLessonId);
+            } else {
+                completedLessons.push(currentLessonId);
+            }
+            localStorage.setItem("completedLessons_a1", JSON.stringify(completedLessons));
+            updateProgressUI();
+            renderLessonsList();
+        };
+
+        // Reset progress listener
+        let resetClicks = 0;
+        resetProgressBtn.onclick = () => {
+            resetClicks++;
+            if (resetClicks === 1) {
+                resetProgressBtn.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Bấm lần nữa để xóa`;
+                resetProgressBtn.classList.replace("text-slate-400", "text-rose-500");
+                setTimeout(() => {
+                    resetClicks = 0;
+                    resetProgressBtn.innerHTML = `<i class="fa-solid fa-rotate-right"></i> Đặt lại`;
+                    resetProgressBtn.classList.replace("text-rose-500", "text-slate-400");
+                }, 3000);
+            } else if (resetClicks === 2) {
+                completedLessons = [];
+                localStorage.removeItem("completedLessons_a1");
+                updateProgressUI();
+                renderLessonsList();
+                resetClicks = 0;
+                resetProgressBtn.innerHTML = `<i class="fa-solid fa-circle-check"></i> Đã xóa tiến độ`;
+                setTimeout(() => {
+                    resetProgressBtn.innerHTML = `<i class="fa-solid fa-rotate-right"></i> Đặt lại`;
+                    resetProgressBtn.classList.replace("text-rose-500", "text-slate-400");
+                }, 2000);
+            }
+        };
+
+        // Mobile drawer toggle
+        toggleMenuBtn.onclick = () => {
+            sidebarEl.classList.remove("-translate-x-full");
+            mobileOverlayEl.classList.remove("hidden");
+        };
+        mobileOverlayEl.onclick = () => {
+            sidebarEl.classList.add("-translate-x-full");
+            mobileOverlayEl.classList.add("hidden");
+        };
+
+        // Initial Execution
+        renderLessonsList();
+        renderCurrentLesson();
+    </script>
+</body>
+</html>
