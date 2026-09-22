@@ -3,47 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini LMS - English Course</title>
+    <title>English Learning Hub - Online LMS</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 font-sans">
+<body class="bg-slate-100 font-sans text-slate-800">
 
     <div class="flex h-screen overflow-hidden">
-        <!-- Sidebar -->
-        <div class="w-80 bg-white border-r border-slate-200 flex flex-col">
-            <div class="p-5 border-b border-slate-200 bg-indigo-600 text-white">
-                <h1 class="text-xl font-bold">LMS Tiếng Anh A1</h1>
-                <p class="text-xs text-indigo-200 mt-1">Hệ thống học tập thông minh</p>
+        <!-- Sidebar: Danh sách bài học (Linh động, tự động sinh từ dữ liệu) -->
+        <aside class="w-80 bg-white border-r border-slate-200 flex flex-col shadow-sm">
+            <div class="p-5 bg-indigo-600 text-white">
+                <h1 class="text-lg font-bold">English Online Hub</h1>
+                <p class="text-xs text-indigo-200 mt-0.5">Hệ thống ôn tập 24 bài học</p>
             </div>
-            <div class="p-4 overflow-y-auto flex-1">
-                <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Danh sách bài học</h2>
-                <ul class="space-y-1">
-                    <li><a href="#" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100">Bài 1-7: (Đang cập nhật)</a></li>
-                    <li><a href="#" class="block px-3 py-2 rounded-lg text-sm font-medium bg-indigo-50 text-indigo-700">Bài 8: My House & My Things</a></li>
-                    <li><a href="#" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100">Bài 9: (Đang cập nhật)</a></li>
-                    <li><a href="#" class="block px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100">Bài 10: (Đang cập nhật)</a></li>
-                </ul>
+            <div class="p-3 overflow-y-auto flex-1 space-y-1" id="lessonList">
+                <!-- Danh sách bài học sẽ được load tự động bằng JavaScript ở đây -->
             </div>
-        </div>
+        </aside>
 
         <!-- Main Content Area -->
-        <div class="flex-1 flex flex-col overflow-y-auto">
-            <header class="bg-white border-b border-slate-200 px-8 py-4 flex justify-between items-center shadow-sm">
-                <div>
-                    <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">Level: A1</span>
-                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full ml-2">Duration: 60 min</span>
+        <main class="flex-1 flex flex-col overflow-y-auto">
+            <!-- Header thông tin bài học -->
+            <header class="bg-white border-b border-slate-200 px-8 py-4 flex justify-between items-center shadow-sm sticky top-0 z-10">
+                <div id="lessonMeta">
+                    <!-- Meta info như Level, Duration sẽ load ở đây -->
                 </div>
-                <div class="text-sm text-slate-600">Học viên: Demo User</div>
+                <div class="text-sm font-medium text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Phần bổ trợ ôn tập</div>
             </header>
 
-            <main class="p-8 max-w-4xl mx-auto w-full space-y-8">
-                <!-- Lesson Title -->
+            <!-- Nội dung chi tiết bài học -->
+            <div class="p-8 max-w-4xl mx-auto w-full space-y-8" id="lessonContent">
+                <!-- Nội dung bài học sẽ hiển thị ở đây -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // =========================================================================
+        // KHO DỮ LIỆU 24 BÀI HỌC (Bạn có thể dễ dàng thêm/sửa bài học tại đây)
+        // =========================================================================
+        const lessonsData = {
+            1: {
+                title: "Lesson 1: Introduction & Greetings",
+                level: "A1",
+                duration: "60 min",
+                focus: "Basic Greetings",
+                vocabularies: [
+                    { word: "Hello", type: "Thán từ", pron: "/həˈloʊ/", meaning: "Xin chào", example: "Hello, nice to meet you." },
+                    { word: "Goodbye", type: "Thán từ", pron: "/ɡʊdˈbaɪ/", meaning: "Tạm biệt", example: "Goodbye, see you tomorrow." }
+                ],
+                structures: [
+                    { title: "Chào hỏi", expr: "Hello / Hi, I'm [Name].", meaning: "Xin chào, tôi là..." }
+                ],
+                practiceText: "Thực hành chào hỏi bạn mới làm quen bằng tiếng Anh trong 2 phút.",
+                quiz: [
+                    {
+                        question: "Câu nào dùng để chào khi mới gặp?",
+                        options: ["Goodbye", "Hello", "Thanks"],
+                        answer: 1
+                    }
+                ]
+            },
+            // Bạn có thể tiếp tục thêm Bài 2 đến Bài 7 ở đây...
+            8: {
+                title: "Lesson 8: My House & My Things",
+                level: "A1",
+                duration: "60 min",
+                focus: "Communication & Speaking Practice",
+                vocabularies: [
+                    { word: "Bedroom", type: "Danh từ", pron: "/'bed.ru:m/", meaning: "Phòng ngủ", example: "My bedroom is small." },
+                    { word: "Kitchen", type: "Danh từ", pron: "/'kitf.im/", meaning: "Nhà bếp", example: "There is a table in the kitchen." },
+                    { word: "Living room", type: "Danh từ", pron: "/'liv.ŋ ru:m/", meaning: "Phòng khách", example: "We watch TV in the living room." },
+                    { word: "Bathroom", type: "Danh từ", pron: "/'ba:0.ru:m/", meaning: "Phòng tắm", example: "The bathroom is next to my room." },
+                    { word: "Furniture", type: "Danh từ", pron: "/'f3:.ni.tfǝr/", meaning: "Đồ nội thất", example: "There isn't much furniture." }
+                ],
+                structures: [
+                    { title: "Mô tả nhà", expr: "There is / There are... in my house.", meaning: "Nhà tôi có..." },
+                    { title: "Hỏi vị trí", expr: "Where is / are my...?", meaning: "...ở đâu?" },
+                    { title: "Trả lời vị trí", expr: "It's on/in/under/next to...", meaning: "Nó ở trên/trong/dưới/cạnh..." }
+                ],
+                practiceText: "Mô tả các phòng trong nhà của bạn cho giáo viên nghe, dùng There is/are.",
+                quiz: [
+                    {
+                        question: "Điền từ thích hợp: 'There _____ a table in the kitchen.'",
+                        options: ["is", "are"],
+                        answer: 0
+                    },
+                    {
+                        question: "Từ 'Furniture' có nghĩa tiếng Việt là gì?",
+                        options: ["Phòng tắm", "Đồ nội thất", "Nhà bếp"],
+                        answer: 1
+                    },
+                    {
+                        question: "Chọn câu hỏi đúng về vị trí điện thoại:",
+                        options: ["Where is my phone?", "There is my phone?"],
+                        answer: 0
+                    }
+                ]
+            }
+            // Bạn có thể cấu trúc tương tự cho Bài 9 đến Bài 24...
+        };
+
+        // Hàm render danh sách bài học bên Sidebar
+        function renderSidebar(currentId) {
+            const listEl = document.getElementById('lessonList');
+            listEl.innerHTML = '';
+            
+            // Giả lập hiển thị 24 bài (bài nào có dữ liệu thì bấm được, bài chưa có hiện trạng thái đang cập nhật)
+            for (let i = 1; i <= 24; i++) {
+                const isActive = i === currentId;
+                const hasData = lessonsData[i] !== undefined;
+                
+                const item = document.createElement('a');
+                item.href = "#";
+                item.className = `block px-3 py-2.5 rounded-lg text-sm font-medium transition ${
+                    isActive 
+                        ? 'bg-indigo-50 text-indigo-700 border-l-4 border-indigo-600' 
+                        : hasData 
+                            ? 'text-slate-600 hover:bg-slate-50' 
+                            : 'text-slate-400 hover:bg-slate-50'
+                }`;
+                item.innerHTML = `Bài ${i}: ${hasData ? lessonsData[i].title.replace(/^Lesson \d+: /, '') : '(Đang cập nhật)'}`;
+                
+                if (hasData) {
+                    item.onclick = (e) => {
+                        e.preventDefault();
+                        loadLesson(i);
+                    };
+                } else {
+                    item.onclick = (e) => {
+                        e.preventDefault();
+                        alert("Bài học này đang được biên soạn nội dung!");
+                    };
+                }
+                listEl.appendChild(item);
+            }
+        }
+
+        // Hàm load nội dung bài học ra màn hình chính
+        function loadLesson(id) {
+            const data = lessonsData[id];
+            if (!data) return;
+
+            renderSidebar(id);
+
+            // Render Header Meta
+            document.getElementById('lessonMeta').innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">Level: ${data.level}</span>
+                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full">Duration: ${data.duration}</span>
+                </div>
+            `;
+
+            // Render Nội dung chi tiết
+            let html = `
                 <div class="border-b pb-4">
-                    <h2 class="text-2xl font-bold text-slate-800">Lesson 8: My House & My Things</h2>
-                    <p class="text-slate-500 text-sm mt-1">Focus: Communication & Speaking Practice</p>
+                    <h2 class="text-2xl font-bold text-slate-800">${data.title}</h2>
+                    <p class="text-slate-500 text-sm mt-1">Focus: ${data.focus}</p>
                 </div>
 
-                <!-- 1. Vocabulary -->
+                <!-- Từ vựng -->
                 <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                     <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
                         <span class="bg-indigo-100 text-indigo-700 p-2 rounded-lg mr-2 text-sm">01</span> Từ vựng (Vocabulary)
@@ -55,135 +173,115 @@
                                     <th class="p-3">Word</th>
                                     <th class="p-3">Loại từ</th>
                                     <th class="p-3">Pronunciation</th>
-                                    <th class="p-3">Meaning (VN)</th>
+                                    <th class="p-3">Meaning</th>
                                     <th class="p-3">Example</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-200">
-                                <tr><td class="p-3 font-medium text-slate-900">Bedroom</td><td class="p-3">Danh từ</td><td class="p-3">/'bed.ru:m/</td><td class="p-3">Phòng ngủ</td><td class="p-3">My bedroom is small.</td></tr>
-                                <tr><td class="p-3 font-medium text-slate-900">Kitchen</td><td class="p-3">Danh từ</td><td class="p-3">/'kitf.im/</td><td class="p-3">Nhà bếp</td><td class="p-3">There is a table in the kitchen.</td></tr>
-                                <tr><td class="p-3 font-medium text-slate-900">Living room</td><td class="p-3">Danh từ</td><td class="p-3">/'liv.ŋ ru:m/</td><td class="p-3">Phòng khách</td><td class="p-3">We watch TV in the living room.</td></tr>
-                                <tr><td class="p-3 font-medium text-slate-900">Bathroom</td><td class="p-3">Danh từ</td><td class="p-3">/'ba:0.ru:m/</td><td class="p-3">Phòng tắm</td><td class="p-3">The bathroom is next to my room.</td></tr>
-                                <tr><td class="p-3 font-medium text-slate-900">Furniture</td><td class="p-3">Danh từ</td><td class="p-3">/'f3:.ni.tfǝr/</td><td class="p-3">Đồ nội thất</td><td class="p-3">There isn't much furniture.</td></tr>
+                                ${data.vocabularies.map(v => `
+                                    <tr>
+                                        <td class="p-3 font-medium text-slate-900">${v.word}</td>
+                                        <td class="p-3">${v.type}</td>
+                                        <td class="p-3">${v.pron}</td>
+                                        <td class="p-3">${v.meaning}</td>
+                                        <td class="p-3">${v.example}</td>
+                                    </tr>
+                                `).join('')}
                             </tbody>
                         </table>
                     </div>
                 </section>
 
-                <!-- 2. Common Structures -->
+                <!-- Cấu trúc -->
                 <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                     <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
-                        <span class="bg-indigo-100 text-indigo-700 p-2 rounded-lg mr-2 text-sm">02</span> Cấu trúc thông dụng (Common Structures)
+                        <span class="bg-indigo-100 text-indigo-700 p-2 rounded-lg mr-2 text-sm">02</span> Cấu trúc (Structures)
                     </h3>
-                    <div class="grid gap-4 md:grid-cols-3">
-                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                            <span class="text-xs font-semibold text-indigo-600 uppercase">Mô tả nhà</span>
-                            <p class="font-medium text-slate-800 mt-1">There is / There are... in my house.</p>
-                            <p class="text-xs text-slate-500 mt-1">Ý nghĩa: Nhà tôi có...</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                            <span class="text-xs font-semibold text-indigo-600 uppercase">Hỏi vị trí</span>
-                            <p class="font-medium text-slate-800 mt-1">Where is / are my...?</p>
-                            <p class="text-xs text-slate-500 mt-1">Ý nghĩa: ...ở đâu?</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-                            <span class="text-xs font-semibold text-indigo-600 uppercase">Trả lời vị trí</span>
-                            <p class="font-medium text-slate-800 mt-1">It's on/in/under/next to...</p>
-                            <p class="text-xs text-slate-500 mt-1">Ý nghĩa: Nó ở trên/trong/dưới/cạnh...</p>
-                        </div>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        ${data.structures.map(s => `
+                            <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                                <span class="text-xs font-semibold text-indigo-600 uppercase">${s.title}</span>
+                                <p class="font-medium text-slate-800 mt-1">${s.expr}</p>
+                                <p class="text-xs text-slate-500 mt-1">Ý nghĩa: ${s.meaning}</p>
+                            </div>
+                        `).join('')}
                     </div>
                 </section>
 
-                <!-- 3. Listening & Speaking Practice -->
-                <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-4">
+                <!-- Luyện tập -->
+                <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 space-y-3">
                     <h3 class="text-lg font-bold text-slate-800 flex items-center">
-                        <span class="bg-indigo-100 text-indigo-700 p-2 rounded-lg mr-2 text-sm">03</span> Luyện tập (Listening & Speaking)
+                        <span class="bg-indigo-100 text-indigo-700 p-2 rounded-lg mr-2 text-sm">03</span> Thực hành & Luyện tập
                     </h3>
-                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-100 text-blue-900 text-sm">
-                        <p class="font-semibold">🎧 Listening Practice:</p>
-                        <p class="mt-1">Giáo viên đọc đoạn mô tả phòng khách, học viên nghe và vẽ nhanh sơ đồ đơn giản theo lời mô tả.</p>
-                    </div>
                     <div class="p-4 bg-amber-50 rounded-lg border border-amber-100 text-amber-900 text-sm">
-                        <p class="font-semibold">🗣️ Speaking Practice (Dialogue):</p>
-                        <ul class="mt-2 space-y-1 text-xs">
-                            <li><strong>A:</strong> Is there a TV in your living room?</li>
-                            <li><strong>B:</strong> Yes, there is. There's also a sofa and a small table.</li>
-                            <li><strong>A:</strong> Where's your phone?</li>
-                            <li><strong>B:</strong> It's on the table, next to the sofa.</li>
-                        </ul>
+                        <p class="font-semibold">💡 Hướng dẫn luyện tập:</p>
+                        <p class="mt-1">${data.practiceText}</p>
                     </div>
                 </section>
 
-                <!-- 4. Interactive Quiz (Bài tập trực tuyến) -->
-                <section class="bg-indigo-50/50 rounded-xl shadow-sm border border-indigo-100 p-6">
+                <!-- Bài tập trực tuyến (Quiz) -->
+                <section class="bg-indigo-50/40 rounded-xl shadow-sm border border-indigo-100 p-6">
                     <h3 class="text-lg font-bold text-indigo-900 mb-4 flex items-center">
                         <span class="bg-indigo-600 text-white p-2 rounded-lg mr-2 text-sm">04</span> Làm bài tập trực tuyến (Quiz)
                     </h3>
-                    
-                    <form id="quizForm" class="space-y-6">
-                        <!-- Question 1 -->
-                        <div class="bg-white p-4 rounded-lg border border-indigo-100 shadow-sm">
-                            <p class="font-medium text-slate-800 text-sm mb-3">Câu 1: Điền từ thích hợp: "There _____ a table in the kitchen."</p>
-                            <div class="space-y-2 text-sm">
-                                <label class="flex items-center space-x-2"><input type="radio" name="q1" value="is" class="text-indigo-600"> <span>is</span></label>
-                                <label class="flex items-center space-x-2"><input type="radio" name="q1" value="are" class="text-indigo-600"> <span>are</span></label>
+                    <div id="quizContainer" class="space-y-6">
+                        ${data.quiz.map((q, qIndex) => `
+                            <div class="bg-white p-4 rounded-lg border border-indigo-100 shadow-sm">
+                                <p class="font-medium text-slate-800 text-sm mb-3">Câu ${qIndex + 1}:${q.question}</p>
+                                <div class="space-y-2 text-sm" id="q_${qIndex}">
+                                    ${q.options.map((opt, optIndex) => `
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input type="radio" name="question_${qIndex}" value="${optIndex}" class="text-indigo-600">
+                                            <span>${opt}</span>
+                                        </label>
+                                    `).join('')}
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Question 2 -->
-                        <div class="bg-white p-4 rounded-lg border border-indigo-100 shadow-sm">
-                            <p class="font-medium text-slate-800 text-sm mb-3">Câu 2: Từ "Furniture" có nghĩa tiếng Việt là gì?</p>
-                            <div class="space-y-2 text-sm">
-                                <label class="flex items-center space-x-2"><input type="radio" name="q2" value="A" class="text-indigo-600"> <span>Phòng tắm</span></label>
-                                <label class="flex items-center space-x-2"><input type="radio" name="q2" value="B" class="text-indigo-600"> <span>Đồ nội thất</span></label>
-                                <label class="flex items-center space-x-2"><input type="radio" name="q2" value="C" class="text-indigo-600"> <span>Nhà bếp</span></label>
-                            </div>
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="bg-white p-4 rounded-lg border border-indigo-100 shadow-sm">
-                            <p class="font-medium text-slate-800 text-sm mb-3">Câu 3: Chọn câu hỏi đúng về vị trí điện thoại:</p>
-                            <div class="space-y-2 text-sm">
-                                <label class="flex items-center space-x-2"><input type="radio" name="q3" value="A" class="text-indigo-600"> <span>Where is my phone?</span></label>
-                                <label class="flex items-center space-x-2"><input type="radio" name="q3" value="B" class="text-indigo-600"> <span>There is my phone?</span></label>
-                            </div>
-                        </div>
-
-                        <button type="button" onclick="submitQuiz()" class="bg-indigo-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-700 transition shadow">Nộp bài & Chấm điểm</button>
-                    </form>
-
-                    <div id="quizResult" class="mt-4 hidden p-4 rounded-lg bg-emerald-100 text-emerald-900 font-medium text-sm"></div>
+                        `).join('')}
+                        <button type="button" onclick="submitQuiz(${id})" class="bg-indigo-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium hover:bg-indigo-700 transition shadow">Nộp bài & Chấm điểm</button>
+                    </div>
+                    <div id="quizResult" class="mt-4 hidden p-4 rounded-lg text-sm font-medium"></div>
                 </section>
+            `;
 
-                <!-- 5. Homework -->
-                <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2 flex items-center">
-                        <span class="bg-indigo-100 text-indigo-700 p-2 rounded-lg mr-2 text-sm">05</span> Bài tập về nhà (Homework)
-                    </h3>
-                    <p class="text-slate-600 text-sm bg-slate-50 p-4 rounded-lg border border-slate-100">
-                        📹 Quay video ngắn 1 phút miêu tả một phòng trong nhà bạn bằng tiếng Anh, dùng cấu trúc <code class="bg-slate-200 px-1 py-0.5 rounded text-indigo-700 font-semibold">There is/are</code>.
-                    </p>
-                </section>
-            </main>
-        </div>
-    </div>
+            document.getElementById('lessonContent').innerHTML = html;
+        }
 
-    <script>
-        function submitQuiz() {
-            const form = document.getElementById('quizForm');
-            const q1 = form.elements['q1'].value;
-            const q2 = form.elements['q2'].value;
-            const q3 = form.elements['q3'].value;
-
+        // Hàm chấm điểm Quiz tự động
+        function submitQuiz(lessonId) {
+            const data = lessonsData[lessonId];
             let score = 0;
-            if (q1 === 'is') score++;
-            if (q2 === 'B') score++;
-            if (q3 === 'A') score++;
+            let allAnswered = true;
+
+            data.quiz.forEach((q, qIndex) => {
+                const selected = document.querySelector(`input[name="question_${qIndex}"]:checked`);
+                if (!selected) {
+                    allAnswered = false;
+                } else if (parseInt(selected.value) === q.answer) {
+                    score++;
+                }
+            });
 
             const resultDiv = document.getElementById('quizResult');
             resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = `Kết quả của bạn: <strong>${score}/3</strong> câu trả lời đúng! ${score === 3 ? '🎉 Xuất sắc!' : '💡 Hãy ôn lại bài kỹ hơn nhé!'}`;
+
+            if (!allAnswered) {
+                resultDiv.className = "mt-4 p-4 rounded-lg bg-amber-100 text-amber-900 text-sm font-medium";
+                resultDiv.innerHTML = "⚠️ Vui lòng trả lời tất cả các câu hỏi trước khi nộp bài!";
+                return;
+            }
+
+            if (score === data.quiz.length) {
+                resultDiv.className = "mt-4 p-4 rounded-lg bg-emerald-100 text-emerald-900 text-sm font-medium";
+                resultDiv.innerHTML = `🎉 Tuyệt vời! Bạn đã trả lời đúng ${score}/${data.quiz.length} câu.`;
+            } else {
+                resultDiv.className = "mt-4 p-4 rounded-lg bg-blue-100 text-blue-900 text-blue-900 text-sm font-medium";
+                resultDiv.innerHTML = `💡 Bạn đạt ${score}/${data.quiz.length} câu đúng. Hãy xem lại kiến thức phía trên để ôn kỹ hơn nhé!`;
+            }
         }
+
+        // Khởi chạy mặc định vào bài 8 khi mở web
+        loadLesson(8);
     </script>
 </body>
 </html>
